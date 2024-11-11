@@ -11,6 +11,7 @@ function About() {
   const answerRef = useRef(null);
   const answeRef1 = useRef(null);
   const answeRef2 = useRef(null);
+  const answeRef3 = useRef(null);
   const handleQuestionClick = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
     handleHighlight();
@@ -35,7 +36,7 @@ function About() {
           <a onClick={() => handleQuestionClick(answeRef1)}>
             How many players are required to play blackjack ?
           </a>
-          <a >What is the ain aim of playing blackjack ?</a>
+          <a onClick={() =>{handleQuestionClick(answeRef3)}}>What is the ain aim of playing blackjack ?</a>
           <a onClick={() => handleQuestionClick(answeRef2)}>How are points calculated in blackjack ?</a>
           <a > What are the rules of blackjack ?</a>
           <a>What's a good hand in blackjack ?</a>
@@ -60,11 +61,11 @@ function About() {
             , one of which is the dealer and uses decks of 52 cards.
           </p>
           <p>
-            <span className="color">
+            <span ref={answeRef3}>
               The goal of the game is to beat the dealer:
-            </span>{" "}
+            
             Have a hand that totals higher than the dealer's, but
-            <span className="history"> doesn't total more than 21</span>. If
+            doesn't total more than 21</span>. If
             your hand totals more than 21, it is called a{" "}
             <span className="color">burst</span>,which means you are out of the
             game.

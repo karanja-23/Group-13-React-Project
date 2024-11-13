@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"; // Only import necessary hooks
+import { useEffect, useState } from "react";
 import NavBar from "../Components/NavBar";
-import Cards from "../Utils/card2";  // Ensure you import the Cards component correctly
+import Cards from "../Utils/card2";
 import Backside from "../assets/playing-card.png";
 import "../CSS/index.css";
 
@@ -18,11 +18,10 @@ function createDeck() {
     ranks.map(rank => ({
       ...rank,
       suit,
-      image: `../assets/${rank.number}${suit}.png`,  // You might want to adjust this path if necessary
+      image: `../assets/${rank.number}${suit}.png`,
     }))
   );
 
-  // Shuffle the deck multiple times for better randomness
   for (let i = 0; i < 5; i++) {
     deck = deck.sort(() => Math.random() - 0.5);
   }
@@ -30,12 +29,10 @@ function createDeck() {
   return deck;
 }
 
-// Draw a card safely
 function drawCard(deck) {
   return deck.length > 0 ? deck.pop() : { number: "", value: 0, suit: "", image: Backside };
 }
 
-// Calculate score with ace handling
 function calculateScore(cards) {
   let score = 0;
   let aceCount = 0;
@@ -59,21 +56,31 @@ function Dealing() {
   const [showDealerCard, setShowDealerCard] = useState(false);
   const [winner, setWinner] = useState("");
   const [dealerTurnDone, setDealerTurnDone] = useState(false);
+  const [playerTurnDone, setPlayerTurnDone] = useState(false);
 
   useEffect(() => {
     const newDeck = createDeck();
     const initialPlayerCards = [drawCard(newDeck), drawCard(newDeck)];
     const initialDealerCards = [drawCard(newDeck), drawCard(newDeck)];
-
-    // Shuffle the deck again after dealing
     setDeck(newDeck.sort(() => Math.random() - 0.5));
     setPlayerCards(initialPlayerCards);
     setDealerCards(initialDealerCards);
   }, []);
 
-  // Dealer's turn to draw additional cards if needed
   useEffect(() => {
-    if (!dealerTurnDone) {
+    if (!playerTurnDone) {
+      const playerScore = calculateScore(playerCards);
+      if (playerScore < 17) {
+        const newCard = drawCard(deck);
+        setPlayerCards([...playerCards, newCard]);
+      } else {
+        setPlayerTurnDone(true);
+      }
+    }
+  }, [playerCards, playerTurnDone, deck]);
+
+  useEffect(() => {
+    if (playerTurnDone && !dealerTurnDone) {
       let dealerScore = calculateScore(dealerCards);
       let updatedDealerCards = [...dealerCards];
 
@@ -87,33 +94,27 @@ function Dealing() {
       setShowDealerCard(true);
       setDealerTurnDone(true);
     }
-  }, [dealerCards, deck, dealerTurnDone]);
+  }, [playerTurnDone, dealerCards, deck, dealerTurnDone]);
 
-  // Determine the winner after the dealer's turn
   useEffect(() => {
     if (dealerTurnDone) {
-      // Add a small delay to simulate game processing and randomness
       setTimeout(() => {
         const playerScore = calculateScore(playerCards);
         const dealerScore = calculateScore(dealerCards);
 
-        // Random offset to scores for added unpredictability (optional)
-        const randomOffset = Math.floor(Math.random() * 3) - 1;
-
-        const finalPlayerScore = playerScore + randomOffset;
-        const finalDealerScore = dealerScore + randomOffset;
-
-        if (finalPlayerScore > 21) {
-          setWinner("Dealer wins! Player busts.");
-        } else if (finalDealerScore > 21) {
-          setWinner("Player wins! Dealer busts.");
-        } else if (finalPlayerScore > finalDealerScore) {
-          setWinner("Player wins!");
-        } else if (finalDealerScore > finalPlayerScore) {
-          setWinner("Dealer wins!");
+        let resultMessage = `Player ${playerScore} vs Dealer ${dealerScore} - `;
+        if (playerScore > 21) {
+          resultMessage += "Dealer wins! Player busts.";
+        } else if (dealerScore > 21) {
+          resultMessage += "Player wins! Dealer busts.";
+        } else if (playerScore > dealerScore) {
+          resultMessage += "Player wins!";
+        } else if (dealerScore > playerScore) {
+          resultMessage += "Dealer wins!";
         } else {
-          setWinner("It's a tie!");
+          resultMessage += "It's a tie!";
         }
+        setWinner(resultMessage);
       }, 500);
     }
   }, [dealerTurnDone, playerCards, dealerCards]);
@@ -122,15 +123,14 @@ function Dealing() {
     const newDeck = createDeck();
     const initialPlayerCards = [drawCard(newDeck), drawCard(newDeck)];
     const initialDealerCards = [drawCard(newDeck), drawCard(newDeck)];
-
     setDeck(newDeck.sort(() => Math.random() - 0.5));
     setPlayerCards(initialPlayerCards);
     setDealerCards(initialDealerCards);
     setShowDealerCard(false);
-    setWinner(""); // Clear the winner message
-    setDealerTurnDone(false); // Reset the dealer turn
+    setWinner("");
+    setDealerTurnDone(false);
+    setPlayerTurnDone(false);
   };
-
 
   return (
     <div className="home-backgroundDealing">
@@ -148,7 +148,7 @@ function Dealing() {
                     className={`dealing-cards ${index === 1 && !showDealerCard ? "card-flip" : ""}`}
                     image={index === 1 && !showDealerCard ? Backside : card.image}
                     number={index === 1 && !showDealerCard ? "" : card.number}
-                    suit={card.suit}  // Pass the suit to the Cards component
+                    suit={card.suit}
                     width="98px"
                     height="150px"
                   />
@@ -162,7 +162,7 @@ function Dealing() {
                     className="dealing-cards"
                     image={card.image}
                     number={card.number}
-                    suit={card.suit}  // Pass the suit to the Cards component
+                    suit={card.suit}
                     width="98px"
                     height="150px"
                   />
@@ -170,8 +170,17 @@ function Dealing() {
               </div>
             </div>
           </li>
+          <li className="steps">
+            Player decides to automatically take another card if below 17, or stays otherwise.
+          </li>
+          <li className="steps">
+            Dealer flips his card and takes cards until his score is 17 or more.
+          </li>
+          <li className="steps">
+            The dealer compares points with the player to determine the winner.
+            {winner && <div className="winner-message">{winner}</div>}
+          </li>
         </ol>
-        <div className="winner-message">{winner}</div>
         <button className="start-new-game-btn" onClick={resetGame}>Start New Deal</button>
       </div>
     </div>

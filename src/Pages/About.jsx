@@ -6,7 +6,7 @@ import King from "../assets/king.png";
 import Queen from "../assets/queen.png";
 import Jack from "../assets/jack.png";
 import Ace from "../assets/ace.png";
-import Footer from "../Components/Footer.jsx";
+
 function About() {
   const [highlighted, setHighlighted] = useState(false);
   const answerRef = useRef(null);
@@ -81,24 +81,24 @@ function About() {
               ie. they score the value indicated on them.(card 2 = 2 points,
               card 7 = 7 points...)
               <div id="cards2_7">
-              <Cards image={suitImage} number={2}/>
-              <Cards image={suitImage} number={3}/>
-              <Cards image={suitImage} number={4}/>
-              <Cards image={suitImage} number={5}/>
-              <Cards image={suitImage} number={6}/>
-              <Cards image={suitImage} number={7}/>
-              <Cards image={suitImage} number={8}/>
-              <Cards image={suitImage} number={9}/>
-              <Cards image={suitImage} number={10}/>
+              <Cards image={suitImage} number={2} fontSize="0.9em"/>
+              <Cards image={suitImage} number={3} fontSize="0.9em"/>
+              <Cards image={suitImage} number={4} fontSize="0.9em"/>
+              <Cards image={suitImage} number={5} fontSize="0.9em"/>
+              <Cards image={suitImage} number={6} fontSize="0.9em"/>
+              <Cards image={suitImage} number={7} fontSize="0.9em"/>
+              <Cards image={suitImage} number={8} fontSize="0.9em"/>
+              <Cards image={suitImage} number={9} fontSize="0.9em"/>
+              <Cards image={suitImage} number={10} fontSize="0.9em"/>
               </div>
             </p>
             <p>
               → Each face card (jack, queen, king), counts as{" "}
               <span class="history">10 points</span>:
               <div id="face_cards">
-                <Cards image={King} number="K"/>
-                <Cards image={Queen} number="Q"/>
-                <Cards image={Jack} number="J"/>
+                <Cards image={King} number="K" fontSize="0.9em"/>
+                <Cards image={Queen} number="Q" fontSize="0.9em"/>
+                <Cards image={Jack} number="J" fontSize="0.9em"/>
                
               </div>
             </p>
@@ -107,7 +107,7 @@ function About() {
               <span class="history">11 points</span>, whichever is best for the
               player's hand.
               <div id="aces">
-                <Cards image={Ace} number="A"/>
+                <Cards image={Ace} number="A" fontSize="0.9em"/>
               </div>
             </p>
           </div>
@@ -125,20 +125,20 @@ function About() {
           
         </div>
         <div id="lingo">
-          <h4 style={{color: "goldenrod", textAlign: "center"}}>Blackjack Lingo</h4>
+          <h4 style={{color: "goldenrod", textAlign: "center",fontSize: "1.2em"}}>Blackjack Lingo</h4>
           {lingo.map((item, index) => (
             <button className="lingo-item" key={index}>{item}</button>
           ))}
           
         </div>
         <div id="video">
-        <h4 style={{color: "goldenrod", textAlign: "center"}}>How to play blackjack</h4>
+        <h4 style={{color: "goldenrod", textAlign: "center",fontSize: "1.2em"}}>How to play blackjack</h4>
           <iframe src="https://www.youtube.com/embed/PljDuynF-j0" title="How to Play (and Win) at Blackjack: The Expert&#39;s Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
         </div>
         
       </div>
-      <Footer /> 
+      
     </div>
   );
 }

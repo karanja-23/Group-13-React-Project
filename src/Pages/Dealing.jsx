@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"; // Only import necessary hooks
 import NavBar from "../Components/NavBar";
-import Cards from "../Utils/cards";  // Ensure you import the Cards component correctly
+import Cards from "../Utils/card2";  // Ensure you import the Cards component correctly
 import Backside from "../assets/playing-card.png";
 import "../CSS/index.css";
 

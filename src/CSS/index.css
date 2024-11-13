@@ -309,3 +309,27 @@ text-decoration-thickness: 2px;
   top: 0;
   
 } 
+
+/* Styling for the 'Start New Game' button */
+/* Styling for the 'Start New Game' button */
+.start-new-game-btn {
+  background-color: #b18631; /* Primary color */
+  color: white; /* Text color */
+  font-size: 1.1em; /* Font size */
+  padding: 10px 20px; /* Button padding */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.start-new-game-btn:hover {
+  background-color: #d3c19d; /* Hover color */
+  transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.start-new-game-btn:focus {
+  outline: none; /* Remove the default focus outline */
+}
+

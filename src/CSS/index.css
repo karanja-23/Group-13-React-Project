@@ -816,6 +816,102 @@ nav a {
 nav a:hover {
   color: #e50914; /* Red hover effect */
 }
+#my-homepage{
+  height: 80vh;
+  position: relative;
+  width: 100%;  
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  background-color: #0b6623;
+ 
+}
+#what-to-learn{ 
+  font-size: 1.7em;
+  font-weight: 900;
+  text-align: center;
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#img1{
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 10%;
+  left: 20%;
+
+}
+#img2{
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 10%;
+  right: 20%;
+}
+#my-homepage ul {
+  position: absolute;
+  top: 40%;
+  color: #b59e37;
+  font-weight: 900;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  line-height: 2em;
+  font-size: 1.5em;
+}
+#home-btn{
+  width: fit-content;
+  margin: auto;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.3em;
+  padding: 10px 30px;
+  border: none;
+  background-color:rgb(87, 14, 14);
+  color: white;
+  font-weight: 900;
+}
+#home-btn:hover{
+  background-color:#b59e37;
+  color:rgb(87, 14, 14);
+}
+#home-btn a{
+  text-decoration: none;
+  color: white;
+}
+#my-homepage h1 {
+  position: absolute;
+  right: 15%;  
+  top: 35px;
+  text-align: center;
+  font-size: 2.0em;
+  font-weight: 900;
+  margin: auto;
+  width: 70%;
+  color: white;
+  background: linear-gradient(to bottom,  #b59e37 #236B2B); 
+  animation: pulse 2s infinite;
+  padding: 10px 20px;
+  border-radius: 10px; /* Adds a slight rounded corner effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow effect */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 /* Responsive styling */
 @media screen and (max-width: 768px) {

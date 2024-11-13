@@ -4,6 +4,7 @@ import Dealing from "../Pages/Dealing";
 import Game from "../Pages/Game";
 import Outcomes from "../Pages/Outcomes";
 import ErrorPage from "../Pages/ErrorPage";
+import Deal from "../Pages/Deal";
 
 import Thegame from "../Pages/Thegame";
 const routes = [
@@ -19,7 +20,7 @@ const routes = [
     },
     {
         path: '/dealing',
-        element: <Dealing />,
+        element: <Deal />,
         errorElement: <ErrorPage />
     },
     {

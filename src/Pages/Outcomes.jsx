@@ -66,7 +66,7 @@ function Outcomes() {
       </div>
     </div>
   );
-
+}
 
 
 export default Outcomes;

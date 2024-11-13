@@ -133,7 +133,7 @@ function Dealing() {
 
 
   return (
-    <div className="home-background">
+    <div className="home-backgroundDealing">
       <NavBar />
       <div id="dealing-content">
         <ol>
@@ -172,7 +172,7 @@ function Dealing() {
           </li>
         </ol>
         <div className="winner-message">{winner}</div>
-        <button className="start-new-game-btn" onClick={resetGame}>Start New Game</button>
+        <button className="start-new-game-btn" onClick={resetGame}>Start New Deal</button>
       </div>
     </div>
   );

@@ -310,26 +310,77 @@ text-decoration-thickness: 2px;
   
 } 
 
-/* Styling for the 'Start New Game' button */
-/* Styling for the 'Start New Game' button */
+/* Background Styling */
+.home-backgroundDealing {
+  background: linear-gradient(145deg, #0b6623, #092a1c);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+#dealing-content {
+  border: 2px solid gold;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px gold;
+}
+
+/* Dealer and Player Labels */
+.dealer-label, .player-label {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #FFD700; /* Gold color */
+  text-shadow: 1px 1px 2px black;
+}
+
+/* Card Styling */
+.dealing-cards {
+  border: 2px solid gold;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+.dealing-cards.card-flip {
+  transform: rotateY(180deg);
+}
+
+/* Winner Message */
+.winner-message {
+  font-size: 1.5em;
+  color: #FFD700; /* Gold color */
+  margin: 20px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* New Game Button */
 .start-new-game-btn {
-  background-color: #b18631; /* Primary color */
-  color: white; /* Text color */
-  font-size: 1.1em; /* Font size */
-  padding: 10px 20px; /* Button padding */
-  border: none;
-  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  background-color: #d32f2f; /* Red color */
+  border: 2px solid gold;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
 }
-
 .start-new-game-btn:hover {
-  background-color: #d3c19d; /* Hover color */
-  transform: scale(1.05); /* Slight scaling effect on hover */
+  background-color: #b71c1c;
 }
 
-.start-new-game-btn:focus {
-  outline: none; /* Remove the default focus outline */
+/* Dealer and Player Container */
+#dealer, #player {
+  display: flex;
+  gap: 10px;
 }
-

@@ -278,16 +278,10 @@ text-decoration-thickness: 2px;
   top: 0;
   
 }/* Base styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #1a1a1a; /* Dark background for a casino vibe */
-  color: white;
-}
+
 
 .home-background {
-  background-color: #111; /* Slightly darker for depth */
+  
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -295,36 +289,37 @@ body {
 }
 
 .outcomes-content {
+  font-family: "Inconsolata", monospace;
   max-width: 800px;
   margin: 20px;
   padding: 20px;
-  background-color:black; /* Dark background for content */
+  background-color:rgb(29, 99, 29) ;/* Lighter background for content */
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
 }
 
-h1 {
+.outcomes-content h1 {
   font-size: 2.5rem;
   text-align: center;
-  color: #1db954; /* Green for the title */
+  color:gold; /* Green for the title */
   margin-bottom: 20px;
 }
 
-h2 {
+.outcomes-content h2 {
   font-size: 1.75rem;
-  color: #e50914; /* Red for section titles */
+  color: Green; /* Green for section titles */
   margin-bottom: 10px;
 }
 
-p {
+.outcomes-content p {
   font-size: 1.1rem;
-  color: #ccc; /* Light grey for normal text */
+  color: white; /* white for normal text */
   line-height: 1.6;
   margin-bottom: 15px;
 }
 
 .outcome-card {
-  background-color: #444; /* Darker grey cards for contrast */
+  background-color:black;/* Black cards for contrast */
   margin-bottom: 15px;
   padding: 15px;
   border-radius: 8px;
@@ -339,12 +334,12 @@ p {
 }
 
 .outcome-card h2 {
-  color: #1db954; /* Green for outcome headings */
+  color: gold; /* Gold for outcome headings */
   font-weight: bold;
 }
 
 .outcome-card p {
-  color: #ddd; /* Lighter grey for description text */
+  color: white; /* White for description text */
 }
 
 /* Navigation Bar */

@@ -408,11 +408,12 @@ function Thegame() {
             <p className="points">Player's points: {playerScore}</p>
           </div>
         </div>
-      </div>
-      <div id="play-btns">
+        <div id="play-btns">
         <button onClick={hit}>Hit</button>
         <button onClick={stand}>stand</button>
       </div>
+      </div>
+
     </div>
   );
 }

@@ -63,8 +63,10 @@ function About() {
             </span>
             , one of which is the dealer and uses decks of 52 cards.
           </p>
+
           <p><span ref={answeRef4}> 
             The goal of the game is to beat the dealer:            
+
             Have a hand that totals higher than the dealer's, but
             doesn't total more than 21</span>. If
             your hand totals more than 21, it is called a{" "}

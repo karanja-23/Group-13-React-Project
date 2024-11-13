@@ -88,7 +88,7 @@ text-decoration-thickness: 2px;
   display: flex;
   margin: auto ;
   height: fit-content;
-  margin-top: 100px;
+  margin-top: 150px;
   font-family: "Inconsolata", monospace;
 }
 
@@ -110,7 +110,7 @@ text-decoration-thickness: 2px;
   top: 10px;
   left: 10px;
   border: 1px solid rgb(29, 99, 29);
-  min-height: 65vh;
+  height: 65vh;
   background-color: rgb(29, 99, 29);
   color: #fff; /* white text color */
   padding: 15px;
@@ -317,116 +317,6 @@ text-decoration-thickness: 2px;
   position: absolute;
   top: 0;
   
-
-}/* Base styles */
-
-
-.home-background {
-  
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.outcomes-content {
-  font-family: "Inconsolata", monospace;
-  max-width: 800px;
-  margin: 20px;
-  padding: 20px;
-  background-color:rgb(29, 99, 29) ;/* Lighter background for content */
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-}
-
-.outcomes-content h1 {
-  font-size: 2.5rem;
-  text-align: center;
-  color:gold; /* Green for the title */
-  margin-bottom: 20px;
-}
-
-.outcomes-content h2 {
-  font-size: 1.75rem;
-  color: Green; /* Green for section titles */
-  margin-bottom: 10px;
-}
-
-.outcomes-content p {
-  font-size: 1.1rem;
-  color: white; /* white for normal text */
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.outcome-card {
-  background-color:black;/* Black cards for contrast */
-  margin-bottom: 15px;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease-in-out;
-}
-.outcome-card:hover {
-  transform: scale(1.05); /* Scale up on hover */
-  box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.8); /*Gold glow effect */
-
-
-}
-
-.outcome-card h2 {
-  color: gold; /* Gold for outcome headings */
-  font-weight: bold;
-}
-
-.outcome-card p {
-  color: white; /* White for description text */
-}
-
-/* Navigation Bar */
-nav {
-  width: 100%;
-  padding: 10px 0;
-  background-color: #1db954; /* Green background for navbar */
-  display: flex;
-  justify-content: center;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.2rem;
-  margin: 0 20px;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #e50914; /* Red hover effect */
-}
-
-/* Responsive styling */
-@media screen and (max-width: 768px) {
-  .outcomes-content {
-    padding: 15px;
-    margin: 10px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  .outcome-card {
-    padding: 10px;
-  }
-
 } 
 #footer{
   position: absolute;

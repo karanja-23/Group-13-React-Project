@@ -3,7 +3,9 @@ function Outcomes (){
     return (
         <div className="home-background">
             <NavBar />
-            <p>Outcomes</p>
+            <div id="outcomes">
+                
+            </div>
         </div>
     )
 }

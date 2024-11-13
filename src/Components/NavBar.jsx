@@ -8,6 +8,7 @@ function NavBar() {
                 <span className="black">B</span><span className="white">L</span><span className="black">A</span><span className="white">C</span><span className="black">K</span><span className="white">J</span><span className="black">A</span><span className="white">C</span><span className="black">K</span>
                 <img id="logo-image" src={logo} />
             </div>
+            
             <div id="nav-bar">
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to="/about" replace>About</NavLink>

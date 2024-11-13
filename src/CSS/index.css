@@ -848,7 +848,7 @@ nav a:hover {
   top: 40%;
   transform: translateY(-50%);
   width: 10%;
-  right: 20%;
+  right: 15%;
 }
 #my-homepage ul {
   position: absolute;
@@ -911,7 +911,53 @@ nav a:hover {
     transform: scale(1);
   }
 }
+.step-demo{
+ 
+  width: 70vw;
+  margin-top: 20px;
+  padding: 10px;
+  margin: auto;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;  
 
+}
+#step-dealer{
+ 
+  width: 100%;
+  height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+#step-dealer h4{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#step-player{
+ 
+  width: 100%;
+  height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+#step-player h4{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+#steps li{
+  margin-bottom: 20px;
+  
+}
 
 /* Responsive styling */
 @media screen and (max-width: 768px) {

@@ -1,12 +1,14 @@
 
+
 import NavBar from "../Components/NavBar"
 import { Link } from "react-router-dom"
 import Img from "../assets/deck.png"
 
 function Home() {
     return (
-        <div className="home-background">
+        <div className="home-back">
             <NavBar />
+
             <div id="my-homepage">
                 <h1>Master the art of Playing Blackjack</h1>
                 <img id="img1" style={{float: "right"}} src={Img} alt="home image"></img>

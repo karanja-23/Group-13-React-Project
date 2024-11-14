@@ -83,3 +83,4 @@ Here’s how you can get the tutorial and game up and running on your pc.
 ## [License](LICENSE)
 MIT License
 Copyright (c) 2024 James Maroko, Joy Wahome, Hosea Karanja
+

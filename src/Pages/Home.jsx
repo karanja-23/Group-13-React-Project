@@ -6,7 +6,7 @@ import Img from "../assets/deck.png"
 
 function Home() {
     return (
-        <div className="home-back">
+        <div className="home-background">
             <NavBar />
 
             <div id="my-homepage">

@@ -1,56 +1,28 @@
-import NavBar from "../Components/NavBar";
-import {Link} from "react-router-dom";
-import "../CSS/index.css";
-import apple from "../assets/apple.png";
+
+
+import NavBar from "../Components/NavBar"
+import { Link } from "react-router-dom"
+import Img from "../assets/deck.png"
+
 function Home() {
     return (
         <div className="home-back">
             <NavBar />
-           <img src=""/>
-            <div className="home">
-                <h1>Welome to the Blackjack Game!</h1>
-                <p className="p1"> Ready to challenge the dealer and test you luck? Learn the rules,practise your skills,and see if you can beat without busting! </p>
-            </div>
-            <div className="card-con">
 
-             <div className="card">
-                <span className="top-left">A</span>
-                <div className="card-body">
-                    <span className="card-number">A</span>
-                    <span className="card-suit">♠</span>
-                </div>
-                <span className="bottom-rigth">A</span>
-             </div>
+            <div id="my-homepage">
+                <h1>Master the art of Playing Blackjack</h1>
+                <img id="img1" style={{float: "right"}} src={Img} alt="home image"></img>
+                <img  id="img2" src={Img} alt="home image"></img>
+                <span id="what-to-learn">What you'll Learn:</span>
+                <ul style={{textAlign: "center"}}>
+                    <li>Basic Rules</li>
+                    <li>How to play Blackjack</li>
+                    <li>Strategies on how to win</li>                
+                    <li>Cool Blackjack lingo</li>  
+                    <li>and more ...</li>               
 
-             <div className="card">
-                <span className="top-left">K</span>
-                <div className="card-body">
-                    <span className="card-number">K</span>
-                    <span className="card-suit">♠</span>
-                </div>
-                <span className="bottom-rigth">K</span>
-             </div>
-
-
-
-             <div className="card">
-                <span className="top-left">J</span>
-                <div className="card-body">
-                    <span className="card-number">J</span>
-                    <span className="card-suit">♠</span>
-                </div>
-                <span className="bottom-rigth">J</span>
-             </div>
-
-
-             <div className="card">
-                <span className="top-left">Q</span>
-                <div className="card-body">
-                    <span className="card-number">Q</span>
-                    <span className="card-suit">♠</span>
-                </div>
-                <span className="bottom-rigth">Q</span>
-             </div>
+                </ul>
+                <button id="home-btn"><Link to="./about">Get Started</Link></button>
             </div>
             
         </div>
